@@ -3,8 +3,8 @@ email_1:            bbond@ncsu.edu
 email_2:            bond.brody.d@gmail.com            
 description:        Brody's Website
 author:             Brody Bond
-baseurl:            "/home"
-url:                "https://brodybond.github.io/blog.html"
+baseurl:            ""
+url:                "https://brodybond.github.io/"
 
 # Social Profiles
 twitter_username:   
