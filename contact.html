@@ -6,8 +6,19 @@ background: '/img/bg-contact.jpg'
 form: true
 ---
 
-<p> Howdy! If you are interested in contacting me, feel free to fill out the form below. <b>If you are an NC State student,</b> please send me an email at bbond@ncsu.edu </p>
+<p> Howdy! If you are interested in contacting me, feel free to fill out the form below.
 <form name="sentMessage" id="contactForm" novalidate>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label for="sendTo">Send To</label>
+      <select class="form-control" id="sendTo" required data-validation-required-message="Please select an email.">
+        <option value="" disabled selected>Select an email</option>
+        <option value="college@email.com">Academic-related: bbond@ncsu.edu</option>
+        <option value="personal@email.com">Personal: bond.brody.d@gmail.com</option>
+      </select>
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
   <div class="control-group">
     <div class="form-group floating-label-form-group controls">
       <label>Name</label>
