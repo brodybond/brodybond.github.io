@@ -3,20 +3,23 @@ layout: default
 title: Photo Gallery
 ---
 
-<h2>All Static Files</h2>
+<h2>Static Files in img_gallery</h2>
 <ul>
-    {% for file in site.static_files | where: "path", "img_gallery/" %}
+    {% assign gallery_files = site.static_files | where: "path", "img_gallery/" %}
+    {% for file in gallery_files %}
         <li>{{ file.path }}</li>
     {% endfor %}
 </ul>
 
 <div class="gallery">
-    <!-- {% assign images = site.static_files | where: "path", "img_gallery/" %} -->
-    {% if images.size > 0 %}
-        {% for image in images %}
-            <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
+    {% if gallery_files.size > 0 %}
+        {% for image in gallery_files %}
+            <div>
+                <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
+                <p>Image path: {{ image.path | relative_url }}</p>
+            </div>
         {% endfor %}
     {% else %}
-        <p>No images found.</p>
+        <p>No images found in img_gallery.</p>
     {% endif %}
 </div>
