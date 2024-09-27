@@ -4,8 +4,13 @@ title: Photo Gallery
 ---
 
 <div class="gallery">
-    {% assign images = site.static_files | where: "path", "/img_gallery/" %}
-    {% for image in images %}
-        <img src="{{ image.path }}" alt="{{ image.name }}">
-    {% endfor %}
+    {% assign images = site.static_files | where: "path", "img_gallery/" %}
+    {% if images.size > 0 %}
+        {% for image in images %}
+            <img src="{{ image.path }}" alt="{{ image.name }}">
+        {% endfor %}
+    {% else %}
+        <p>No images found.</p>
+    {% endif %}
 </div>
+
