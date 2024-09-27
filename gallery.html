@@ -9,10 +9,11 @@ title: Photo Gallery
     
     {% if image_files.size > 0 %}
         {% for image in image_files %}
-            <div>
-                <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
-                <p>{{ image.path }}</p> <!-- Output the file path here -->
-            </div>
+            {% if image.path contains "img_gallery" %}
+                <div>
+                    <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
+                </div>
+            {% endif %}
         {% endfor %}
     {% else %}
         <p>No images found in img_gallery.</p>
