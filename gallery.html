@@ -3,14 +3,12 @@ layout: default
 title: Photo Gallery
 ---
 
-<div></div>
-    <h2>All Static Files</h2>
-    <ul>
-        {% for file in site.static_files %}
-            <li>{{ file.path }}</li>
-        {% endfor %}
-    </ul>
-</div>
+<h2>All Static Files</h2>
+<ul>
+    {% for file in site.static_files | where "path", "img_gallery/" %}
+        <li>{{ file.path }}</li>
+    {% endfor %}
+</ul>
 
 <div class="gallery">
     {% assign images = site.static_files | where: "path", "img_gallery/" %}
@@ -22,5 +20,3 @@ title: Photo Gallery
         <p>No images found.</p>
     {% endif %}
 </div>
-
-
