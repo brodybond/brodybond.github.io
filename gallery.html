@@ -10,8 +10,8 @@ title: Photo Gallery
     {% if image_files.size > 0 %}
         {% for image in image_files %}
             {% if image.path contains "img_gallery" %}
-                <div>
-                    <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
+                <div class="gallery-item">
+                    <img src="{{ image.path | relative_url }}" alt="{{ image.name }}" class="thumbnail" onclick="openLightbox('{{ image.path | relative_url }}')">
                 </div>
             {% endif %}
         {% endfor %}
@@ -19,3 +19,62 @@ title: Photo Gallery
         <p>No images found in img_gallery.</p>
     {% endif %}
 </div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<style>
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* space between images */
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 10px); /* adjust width */
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* rounded corners */
+    transition: transform 0.2s; /* smooth scaling */
+}
+
+.thumbnail:hover {
+    transform: scale(1.05); /* zoom effect on hover */
+}
+
+.lightbox {
+    display: none; /* default to hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+</style>
+
+<script>
+function openLightbox(imageUrl) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = imageUrl;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
