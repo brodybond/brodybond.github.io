@@ -11,7 +11,7 @@ title: Photo Gallery
 </ul>
 
 <div class="gallery">
-    {% assign images = site.static_files | where: "path", "img_gallery/" %}
+    <!-- {% assign images = site.static_files | where: "path", "img_gallery/" %} -->
     {% if images.size > 0 %}
         {% for image in images %}
             <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
