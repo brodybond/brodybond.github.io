@@ -8,6 +8,11 @@ header.masthead {
     position: relative;
     background-size: cover;
 
+    // new code
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+
     .overlay {
         position: absolute;
         top: 0;
@@ -21,16 +26,16 @@ header.masthead {
     .page-heading,
     .post-heading,
     .site-heading {
-        padding: 200px 0 150px;
+        // padding: 200px 0 150px;
         color: white;
 
-        @media only screen and (min-width: 768px) {
-            padding: 200px 0;
-        }
-    }
+    //     @media only screen and (min-width: 768px) {
+    //         padding: 200px 0;
+    //     }
+    // }
 
-    .page-heading,
-    .site-heading {
+    // .page-heading,
+    // .site-heading {
         text-align: center;
 
         h1 {
