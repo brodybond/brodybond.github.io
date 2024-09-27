@@ -1,20 +1,34 @@
 ---
 layout: default
-title: Photo Gallery
 ---
 
-<div class="gallery">
-    {% assign image_files = site.static_files | where: "image", true %}
-    
-    {% if image_files.size > 0 %}
-        {% for image in image_files %}
-            {% if image.path contains "img_gallery" %}
-                <div>
-                    <img src="{{ image.path | relative_url }}" alt="{{ image.name }}">
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>No images found in img_gallery.</p>
-    {% endif %}
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+{% else %}
+<header class="masthead">
+{% endif %}
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>{{ page.title }}</h1>
+          {% if page.description %}
+          <span class="subheading">{{ page.description }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      {{ content }}
+
+    </div>
+  </div>
 </div>
