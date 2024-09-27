@@ -3,7 +3,6 @@ layout: page
 title: Photo Gallery
 ---
 
-<h1>Photo Gallery</h1>
 <div class="gallery">
     {% assign images = site.static_files | where: "path", "/img_gallery/" %}
     {% for image in images %}
