@@ -5,7 +5,7 @@ title: Photo Gallery
 
 <h2>All Static Files</h2>
 <ul>
-    {% for file in site.static_files | where "path", "img_gallery/" %}
+    {% for file in site.static_files | where: "path", "img_gallery/" %}
         <li>{{ file.path }}</li>
     {% endfor %}
 </ul>
