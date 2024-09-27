@@ -1,2 +1,9 @@
 // Import Core Clean Blog SCSS
 @import "../assets/vendor/startbootstrap-clean-blog/scss/styles.scss";
+
+.break {
+    width: 10%; /* Full width */
+    height: 2px; /* Thickness of the line */
+    background-color: #000; /* Line color */
+    margin: 20px 0; /* Space above and below the line */
+}
