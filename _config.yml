@@ -11,8 +11,11 @@ github_username:    brodybond
 linkedin_username:  bdbond
 
 # Build settings
-include:
-  -img_galley
+defaults:
+  - scope:
+      path: "img_gallery"
+    values:
+      image: true
 markdown:           kramdown
 paginate:           5
 paginate_path:      "/posts/page:num/"
