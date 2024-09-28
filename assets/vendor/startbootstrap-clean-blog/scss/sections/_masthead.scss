@@ -1,6 +1,6 @@
 header.masthead {
     margin-top: 20px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     background: no-repeat center center;
     // background-color: $gray-600;
     background-attachment: scroll;
@@ -8,7 +8,7 @@ header.masthead {
     background-size: cover;
     display: flex;
     align-items: center;
-    padding: 70px 0;
+    padding: 40px 0;
 
     .overlay {
         position: absolute;
