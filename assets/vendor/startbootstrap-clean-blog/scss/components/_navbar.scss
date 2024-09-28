@@ -2,7 +2,8 @@
 #mainNav {
     position: absolute;
     border-bottom: 1px solid $gray-200;
-    background-color: white;
+    // background-color: white;
+    background-color: $gray-600;
     font-family: $headings-font-family;
 
     .navbar-brand {
