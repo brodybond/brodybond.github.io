@@ -8,7 +8,7 @@ title: Photo Gallery
     
     {% if image_files.size > 0 %}
         {% for image in image_files %}
-            {% if image.path contains "img_gallery" and image.path does not contain ".json" %}
+            {% if image.path contains "img_gallery" %}
                 <div class="gallery-item">
                     <img src="{{ image.path | relative_url }}" alt="{{ image.name }}" class="thumbnail" onclick="openLightbox('{{ image.path | relative_url }}')">
                 </div>
@@ -23,6 +23,7 @@ title: Photo Gallery
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
+    <p id="lightbox-description" class="lightbox-description"></p>
 </div>
 
 <style>
@@ -50,7 +51,7 @@ title: Photo Gallery
 }
 
 .lightbox {
-    display: none; /* default to hidden*/
+    display: none; /* default to hidden */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -66,44 +67,38 @@ title: Photo Gallery
     max-width: 90%;
     max-height: 90%;
 }
+
+.lightbox-description {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
 </style>
 
 <script>
+let descriptions = {};
+
+fetch('data/descriptions.json')
+    .then(response => response.json())
+    .then(data => {
+        descriptions = data;
+    })
+    .catch(error => {
+        console.error("Error loading descriptions:", error);
+    });
+
 function openLightbox(imageUrl) {
     document.getElementById("lightbox").style.display = "flex";
     document.getElementById("lightbox-img").src = imageUrl;
+
+    const imageName = imageUrl.split('/').pop();
+    const descriptionText = descriptions[imageName] || "No description available.";
+    
+    const descriptionElement = document.getElementById("lightbox-description");
+    descriptionElement.textContent = descriptionText;
 }
 
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
 </script>
-
-<script>
-    let descriptions = {};
-    
-    fetch('img_gallery/descriptions.json')
-        .then(response => response.json())
-        .then(data => {
-            descriptions = data;
-        })
-        .catch(error => {
-            console.error("Error loading descriptions:", error);
-        });
-    
-    function openLightbox(imageUrl) {
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = imageUrl;
-    
-        const imageName = imageUrl.split('/').pop();
-        const descriptionText = descriptions[imageName] || "No description available.";
-        
-        const descriptionElement = document.getElementById("lightbox-description");
-        descriptionElement.textContent = descriptionText;
-    }
-    
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-    }
-    </script>
-    
