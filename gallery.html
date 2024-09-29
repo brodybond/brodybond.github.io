@@ -78,3 +78,32 @@ function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
 </script>
+
+<script>
+    let descriptions = {};
+    
+    fetch('img_gallery/descriptions.json')
+        .then(response => response.json())
+        .then(data => {
+            descriptions = data;
+        })
+        .catch(error => {
+            console.error("Error loading descriptions:", error);
+        });
+    
+    function openLightbox(imageUrl) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = imageUrl;
+    
+        const imageName = imageUrl.split('/').pop();
+        const descriptionText = descriptions[imageName] || "No description available.";
+        
+        const descriptionElement = document.getElementById("lightbox-description");
+        descriptionElement.textContent = descriptionText;
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    </script>
+    
