@@ -38,7 +38,8 @@
         .navbar-brand {
             padding: 10px 20px;
             // color: $white;
-            color: $black;
+            // color: $black;
+            color: $gray-800;
 
             &:focus,
             &:hover {
@@ -52,7 +53,8 @@
                 >a {
                     padding: 10px 20px;
                     // color: $white;
-                    color: $black;
+                    // color: $black;
+                    color: $gray-800;
 
                     &:focus,
                     &:hover {
