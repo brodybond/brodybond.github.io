@@ -29,32 +29,31 @@ title: Photo Gallery
 </div>
 
 <style>
-    .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* space between images */
+     .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create a responsive grid */
+        gap: 10px; /* Space between images */
         margin: 0;
         padding: 0;
+        justify-items: center; /* Center items in their grid cells */
     }
 
     .gallery-item {
-    /* flex: 1 1 calc(25% - 10px); // adjust width */
-    width: calc(50% - 10px); /* Specify a fixed width */
-    cursor: pointer;
-    margin: 5px; /* Add margin around items to control spacing */
+        width: 100%; /* Full width of the grid cell */
+        max-width: 400px; /* Optional: limit maximum width */
+        cursor: pointer;
+        margin: 5px; /* Optional: add margin around items */
     }
-
 
     .thumbnail {
         width: 100%;
-        max-width: 400px; /* max width for thumbnails */
         height: auto;
-        border-radius: 5px; /* rounded corners */
-        transition: transform 0.2s; /* smooth scaling */
+        border-radius: 5px; /* Rounded corners */
+        transition: transform 0.2s; /* Smooth scaling */
     }
 
     .thumbnail:hover {
-        transform: scale(1.05); /* zoom effect on hover */
+        transform: scale(1.05); /* Zoom effect on hover */
     }
 
     .lightbox {
