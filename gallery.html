@@ -80,8 +80,11 @@ title: Photo Gallery
     }
 
     .lightbox-content {
-        max-width: 80%; /* image takes up 80% of container */
-        max-height: 100%; /* image will fit within height */
+        width: auto; /* Allow width to adjust */
+        height: auto; /* Allow height to adjust */
+        max-width: 80%; /* image takes up to 80% of container */
+        max-height: 80%; /* image will fit within height */
+        object-fit: contain; /* ensures the image is fully visible */
     }
 
     .lightbox-description {
