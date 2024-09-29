@@ -33,13 +33,16 @@ title: Photo Gallery
         display: flex;
         flex-wrap: wrap;
         gap: 10px; /* space between images */
+        margin: 0;
+        padding: 0;
     }
 
     .gallery-item {
-    width: calc(25% - 10px); /* Specify a fixed width */
+    /* flex: 1 1 calc(25% - 10px); // adjust width */
+    width: calc(50% - 10px); /* Specify a fixed width */
     cursor: pointer;
     margin: 5px; /* Add margin around items to control spacing */
-}
+    }
 
 
     .thumbnail {
