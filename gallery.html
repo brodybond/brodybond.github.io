@@ -8,7 +8,7 @@ title: Photo Gallery
     
     {% if image_files.size > 0 %}
         {% for image in image_files %}
-            {% if image.path contains "img_gallery" %}
+            {% if image.path contains "img_gallery" and image.path does not contain ".json" %}
                 <div class="gallery-item">
                     <img src="{{ image.path | relative_url }}" alt="{{ image.name }}" class="thumbnail" onclick="openLightbox('{{ image.path | relative_url }}')">
                 </div>
