@@ -111,6 +111,7 @@ fetch('data/descriptions.json')
 
 function openLightbox(imageUrl) {
     document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("mainNav").style.display = "none";
     document.getElementById("lightbox-img").src = imageUrl;
 
     const imageName = imageUrl.split('/').pop();
