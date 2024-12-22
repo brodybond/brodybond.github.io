@@ -7,3 +7,15 @@
     background-color: #000;
     margin: 20px auto;
 }
+
+.cv-page .classes-taken {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cv-page .classes-taken .column {
+    width: 48%;
+    min-width: 300px;
+}
