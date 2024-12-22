@@ -24,15 +24,28 @@ body_class: cv-page  <!-- Use this class for targeted styles only on this page -
     <div class="row">
         <div class="col-lg-12">
             <!-- Resume Text Section -->
-            <p>
-                Hello! Below is my current resume (with a bit of information removed as I'm putting it on a public website), a list of important classes I've completed,
-                and a more extensive list, compared to my resume, of projects I have worked on during my last six or so years of education.
-            </p>
 
             <h2 style="text-align: center; color:#222;"> Projects </h2>
             <ul>
-                <li>ALDA: correlation of factors to school grades</li>
-                <li>OR: McDonald's menu optimization</li>
+                <li> cr.churchfinder: A WIP fullstack webapp that a friend down in Costa Rica suggested. The aim is to have a form that users can fill out that will locate churches within their desired
+                    radius given a few constraints. I plan to leverage <a href = "https://www.openstreetmap.org/about"> OpenStreetMaps (OSM) </a> to display maps and occasionally update the webapp's database.
+                    However, OSM doesn't have a lot of information on churches in Costa Rica, so I will be adding a system to allow authorized users (some pastors and administrators that I've worked with in Costa Rica) 
+                    to add and remove churches to the system. I also plan to add these locations to OSM and contribute back to the project in this manner. Tech Stack: Python, Django, PostgreSQL, and OSM.
+                </li>
+                <li><a href="https://github.com/Gunabana/CityByte">CityByte:</a> As part of CSC 510, my team of three overhauled the front end, added in Google sign-ups/sign-ins, implemented maps for users
+                    to view locations of interest, and introduced an itinerary for users to plan out their trips.
+                </li>
+                <li> Food Menu Optimization: One of the two non-CompSci classes I took in graduate school was <a href = "https://catalog.ncsu.edu/search/?P=ISE%20501">ISE 501: Introductions to Operations Research</a>. For the project in this class,
+                    my team chose to research and implement an optimization of the McDonalds Menu
+                    
+                </li>
+                <li> Quantum Computing: My teammate and I explored and utilized IBM's mid-circuit resets on some of their Quantum Computers in order to find a secret string. We used the BV algorithm as a basis for our 
+                    computations, but reset both qubits after each qubit after computing the answer for each bit of the secret string. This increased the run time from O(1) to O(n), however it decreased the qubits 
+                    needed to solve from n to 2. This is actually a decent trade-off given quantum computers <i> currently </i> do not have many qubits. <sub>However, if you are solving in O(n) time, you may as well use 
+                    a classical computer. (</sub> <a href="https://docs.google.com/presentation/d/1vJBqGfDza0LqqAa9IDONEd8PXI01nk4v30L2RxsZUbM/edit?usp=sharing">Slides</a>)
+                </li>
+                <li> This list is still a WIP.
+                </li>
             </ul>
 
             <!-- Classes Taken Section -->
