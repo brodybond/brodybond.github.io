@@ -2,10 +2,25 @@
 layout: page
 title: Photo Gallery
 ---
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+  
+    <!-- Dynamically preload images in img_gallery -->
+    {% assign image_files = site.static_files | where: "image", true %}
+    {% for image in image_files %}
+      {% if image.path contains "img_gallery" %}
+        <link rel="preload" href="{{ image.path | relative_url }}" as="image">
+      {% endif %}
+    {% endfor %}
+  
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+</head>
 
 <div class="gallery">
     {% assign image_files = site.static_files | where: "image", true %}
-    
     {% if image_files.size > 0 %}
         {% for image in image_files %}
             {% if image.path contains "img_gallery" %}
@@ -27,75 +42,6 @@ title: Photo Gallery
         <p id="lightbox-description" class="lightbox-description"></p>
     </div>
 </div>
-
-<style>
-     .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Create a responsive grid */
-        gap: 10px; /* Space between images */
-        margin: 0;
-        padding: 0;
-        justify-items: center; /* Center items in their grid cells */
-    }
-
-    .gallery-item {
-        width: 100%; /* Full width of the grid cell */
-        max-width: 400px; /* Optional: limit maximum width */
-        cursor: pointer;
-        margin: 5px; /* Optional: add margin around items */
-    }
-
-    .thumbnail {
-        width: 100%;
-        height: auto;
-        border-radius: 5px; /* Rounded corners */
-        transition: transform 0.2s; /* Smooth scaling */
-    }
-
-    .thumbnail:hover {
-        transform: scale(1.05); /* Zoom effect on hover */
-    }
-
-    .lightbox {
-        display: none; /* default to hidden */
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* semi-transparent background */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lightbox-content-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 90%; /* limit total width */
-        max-height: 90%; /* limit total height */
-        margin: auto;
-        overflow: hidden;
-    }
-
-    .lightbox-content {
-        max-width: 100%; /* Image can fill the container's width */
-        max-height: 80vh; /* Limit height to viewport height */
-        width: auto; /* Allow width to adjust */
-        height: auto; /* Allow height to adjust */
-        object-fit: contain; /* Ensure the entire image is visible */
-    }
-
-    .lightbox-description {
-        color: white;
-        margin-top: 10px;
-        /* margin: auto 0; // center vertically */
-        max-width: 100%; /* description takes up 20% of container */
-        text-align: center; /* left align text */
-    }
-</style>
 
 <script>
 let descriptions = {};
