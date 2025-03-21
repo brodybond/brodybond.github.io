@@ -8,7 +8,7 @@
 
     .navbar-brand {
         font-weight: 800;
-        color: $gray-800;
+        color: $green-800;
         // color: $black;
     }
 
@@ -17,7 +17,7 @@
         font-weight: 800;
         padding: 13px;
         text-transform: uppercase;
-        color: $gray-800;
+        color: $green-800;
     }
 
     .navbar-nav {
@@ -39,12 +39,12 @@
             padding: 10px 20px;
             // color: $white;
             // color: $black;
-            color: $gray-800;
+            color: $green-800;
 
             &:focus,
             &:hover {
                 // color: fade-out($white, .2);
-                color: fade-out($gray-600, .2);
+                color: fade-out($green-600, .2);
             }
         }
 
@@ -54,12 +54,12 @@
                     padding: 10px 20px;
                     // color: $white;
                     // color: $black;
-                    color: $gray-800;
+                    color: $green-800;
 
                     &:focus,
                     &:hover {
                         // color: fade-out($white, .2);
-                        color: fade-out($gray-600, 0.2);
+                        color: fade-out($green-600, 0.2);
                     }
                 }
             }
