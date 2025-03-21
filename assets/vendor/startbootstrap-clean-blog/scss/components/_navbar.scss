@@ -1,8 +1,8 @@
 // Styling for the navbar
 #mainNav {
     position: absolute;
-    border-bottom: 1px solid $green-600;
-    background-color: $green-600;
+    border-bottom: 1px solid $green-300;
+    background-color: $green-300;
     // background-color: $gray-600;
     font-family: $headings-font-family;
 
@@ -44,7 +44,7 @@
             &:focus,
             &:hover {
                 // color: fade-out($white, .2);
-                color: fade-out($gray-600, .2);
+                color: fade-out($gray-700, .2);
             }
         }
 
@@ -59,7 +59,7 @@
                     &:focus,
                     &:hover {
                         // color: fade-out($white, .2);
-                        color: fade-out($gray-600, 0.2);
+                        color: fade-out($gray-700, 0.2);
                     }
                 }
             }
