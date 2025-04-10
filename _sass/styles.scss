@@ -19,3 +19,41 @@
     width: 48%;
     min-width: 300px;
 }
+
+.section-info
+{
+    text-align: center;
+    color: #222;
+}
+
+// dd (dropdown) box formatting
+.dd-box {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.dd-summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.dd-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.dd-paragraph {
+    margin-top: 10px;
+    color: #444;
+}
+
+.dd-paragraph a {
+    text-decoration: underline;
+}
+  

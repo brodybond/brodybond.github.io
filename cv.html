@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Resume/CV
-body_class: cv-page  <!-- Use this class for targeted styles only on this page -->
+body_class: cv-page
 ---
+
+<!-- CV-page specific formatting stored in _sass/styles.scss -->
 
 <header class="masthead">
     <div class="container">
@@ -23,51 +25,80 @@ body_class: cv-page  <!-- Use this class for targeted styles only on this page -
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h2 style="text-align: center; color:#222;"> Projects </h2>
-            <p style="text-align:center; color: #222">
+            <h2 class="section-info"> Projects </h2>
+            <p class="section-info">
                 To prevent academic dishonesty (cheating/plagiarism), most classes restrict what code can be published online even for résumé purposes. For this reason, most of the projects listed below
                 do not have publicly-accessible codebases; I've included code/papers/slides where possible.
             </p>
 
-            <ul style="color: #444">
-                <li>
-                    <b>CityByte:</b> As part of the graduate level SWE course, my team of three overhauled an application and implemented new functionality. I personally added Google 
+            <details class="dd-box">
+                <summary class="dd-summary">
+                    <span>CityByte</span></span>
+                </summary>
+                <hr class="dd-divider">
+                <p class="dd-paragraph"><b>Field:</b> Software Engineering </p>
+                <p class="dd-paragraph">
+                    As part of the graduate level SWE course, my team of three overhauled an application and implemented new functionality. I personally added Google 
                     sign-ups/sign-ins and implemented maps for users to view locations of interest while assisting my team with the UI overhaul and the introduction of an itinerary system 
-                    for users to plan out their trips. (<a href="https://github.com/Gunabana/CityByte"><u><u>Codebase</u></u></a>)
-                </li>
-                <li>
-                    <b>MoneyManager:</b> As part of the aforementioned-graduate level SWE course, my team of three turned a set of API endpoints into a fullstack webapp. I stood up the webapp, 
+                    for users to plan out their trips. (<a href="https://github.com/Gunabana/CityByte"><u><u>Codebase</u></u></a>)                        </p>
+            </details>
+    
+            <details class="dd-box">
+                <summary class="dd-summary">
+                    <span>MoneyManager</span>
+                </summary>
+                <hr class="dd-divider">
+                <p class="dd-paragraph"><b>Field:</b> Software Engineering </p>
+                <p class="dd-paragraph">
+                    As part of the aforementioned-graduate level SWE course, my team of three turned a set of API endpoints into a fullstack webapp. I stood up the webapp, 
                     refactored sub-par code, kept Makefiles up-to-date, and helped my team implement the front-end CRUD functionality. (<a href="https://github.com/Gunabana/MoneyManager"><u>Codebase</u></a>)
-                </li>
-                <li>
-                    <b>Food Menu Optimization:</b> One of the two non-CompSci classes I took in graduate school was <a href = "https://catalog.ncsu.edu/search/?P=ISE%20501">ISE 501: Introductions to Operations Research</a>. For the project in this class,
-                    my team chose to research and implement an optimization of the McDonalds Menu from a health perspective with health constraints (e.g. calories).
-                </li>
-                <li>
-                    <b>Quantum Computing:</b> My teammate and I explored and utilized IBM's mid-circuit resets on some of their Quantum Computers in order to find a secret string. 
+                </p>
+            </details>
+    
+            <details class="dd-box">
+                <summary class="dd-summary">
+                    <span>Food Menu Optimization</span>
+                </summary>
+                <hr class="dd-divider">
+                <p class="dd-paragraph"><b>Field:</b> Operations Research </p>
+                <p class="dd-paragraph">
+                    For <a href = "https://catalog.ncsu.edu/search/?P=ISE%20501">ISE 501: Introductions to Operations Research</a>, my team researched 
+                    and implemented a health-oriented optimization of the McDonalds Menu.
+                </p>
+            </details>
+
+            <details class="dd-box">
+                <summary class="dd-summary">
+                    <span>Two-qubit BV Algorithm</span>
+                </summary>
+                <hr class="dd-divider">
+                <p class="dd-paragraph"><b>Field:</b> Quantum Computing </p>
+                <p class="dd-paragraph">
+                    My teammate and I explored and utilized IBM's mid-circuit resets on some of their Quantum Computers in order to find a secret string. 
                     We used the BV algorithm (<a href="https://en.wikipedia.org/wiki/Bernstein%E2%80%93Vazirani_algorithm">Wikipedia</a>) as a basis for our computations, but reset 
                     both qubits after computing the answer for each bit of the secret string. This increased the run time from O(1) to O(n), however it decreased the qubits needed to solve from n to 2. 
                     This is actually a decent trade-off given quantum computers <i> currently </i> do not have many qubits, but admittedly because our solution ran in O(n) time, it could
                     also be solved on a traditional computer; nonetheless, it was a great foray into the world of quantum algorithms.
                     (<a href="https://docs.google.com/presentation/d/1vJBqGfDza0LqqAa9IDONEd8PXI01nk4v30L2RxsZUbM/edit?usp=sharing"><u>Slides</u></a>). 
-                </li>
-                <li>
-                    <b>Analysis of Student Performance and Patterns:</b> As part of Automated Learning & Data Analysis, my team and I used various types of classification trees and 
+                </p>
+            </details>
+
+            <details class="dd-box">
+                <summary class="dd-summary">
+                    <span>Analysis of Student Performance</span>
+                </summary>
+                <hr class="dd-divider">
+                <p class="dd-paragraph"><b>Field:</b> Machine Learning </p>
+                <p class="dd-paragraph">
+                    As part of Automated Learning & Data Analysis, my team and I used various types of classification trees and 
                     K-means clustering to prove that academic traits (e.g. absences, prior class failures) are crucial to student success or failure. 
                     (<a href="https://docs.google.com/presentation/d/1Zzt0Xfsv5ylesv2QyhSs28uIz_OoQfkJD1RQUSqJuEI/edit?usp=sharing"><u>Slides</u></a>)
-                </li>
-                <li>
-                    <b>cr.churchfinder:</b> A WIP fullstack webapp that a friend down in Costa Rica suggested. The aim is to have a form that users can fill out that will locate churches within their desired
-                    radius given a few constraints. I plan to leverage <a href = "https://www.openstreetmap.org/about"> OpenStreetMaps (OSM) </a> to display maps and occasionally update the webapp's database.
-                    However, OSM doesn't have a lot of information on churches in Costa Rica, so I will be adding a system to allow authorized users (some pastors and administrators that I've worked with in Costa Rica) 
-                    to add and remove churches to the system. I also plan to add these locations to OSM and contribute back to the project in this manner. Tech Stack: Python, Django, PostgreSQL, and OSM.
-                </li>
-
-            </ul>
+                </p>
+            </details>
 
             <!-- Classes Taken Section -->
-            <h2 style="text-align: center; color: #222;"> Fun/Formative Classes </h2>
-            <p style="text-align:center; color: #222">
+            <h2 class="section-info"> Fun/Formative Classes </h2>
+            <p class="section-info">
                 Below, the 'U' or 'G' indicates if a class was taken at the undergraduate or graduate level respectively.
             </p>
 
@@ -75,77 +106,111 @@ body_class: cv-page  <!-- Use this class for targeted styles only on this page -
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 20px;">
                 <!-- Column 1 -->
                 <div style="flex: 1 1 45%; min-width: 300px; max-width: 600px;">
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Software Engineering (U/G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        NC State focuses heavily on SWE, so below are the descriptions of a few SWE courses. From recollection, I've received an A, A+, or "A++" (>100 although officially just an A+) 
-                        in all my SWE courses.
-                        <ul style="font-size: 1em; color: #444;">
-                            <li>
-                                CSC 216: an introductory yet intense SWE course that teaches you the basics of OOP (via Java), utilizing test cases, debugging, and a few best-practices.
-                            </li>
-                            <li>
-                                CSC 326: a more in-depth SWE class that focuses out SWE best practices (e.g. git/revision control, working with teams, documentation, {black, white} box testing, etc.), 
-                                system design, and implementation. This was one of my favorite classes.
-                            </li>
-                            <li>
-                                CSC 510: a graduate-level software engineering class that covered everything from the conceptual to the nitty-gritty (and somewhat niche parts) of SWE. Two major takeaways from 
-                                experiences in this class was 1) acclimating to codebases quickly, utilizing them, and improving upon them and 2) teaching, equipping, and encouraging those newer to or less proficient in SWE.
-                            </li>
-                        </ul>
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Software Engineering (U/G)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
+                            NC State focuses heavily on SWE, so below are the descriptions of a few SWE courses. From recollection, I've received an A, A+, or "A++" (>100 although officially just an A+) 
+                            in all my SWE courses.
+                            <ul style="font-size: 1em; color: #444;">
+                                <li>
+                                    CSC 216: an introductory yet intense SWE course that teaches you the basics of OOP (via Java), utilizing test cases, debugging, and a few best-practices.
+                                </li>
+                                <li>
+                                    CSC 326: a more in-depth SWE class that focuses out SWE best practices (e.g. git/revision control, working with teams, documentation, {black, white} box testing, etc.), 
+                                    system design, and implementation. This was one of my favorite classes.
+                                </li>
+                                <li>
+                                    CSC 510: a graduate-level software engineering class that covered everything from the conceptual to the nitty-gritty (and somewhat niche parts) of SWE. Two major takeaways from 
+                                    experiences in this class was 1) acclimating to codebases quickly, utilizing them, and improving upon them and 2) teaching, equipping, and encouraging those newer to or less proficient in SWE.
+                                </li>
+                            </ul>
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Quantum Computing (G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        An introductory quantum computing (QC) class covering basic quantum physics and theory, QC architecture, QC programming, and the analysis, design, and implementation of QC algorithms on simulated and actual quantum computers with a focus on real-world application.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Quantum Computing (G)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            An introductory quantum computing (QC) class covering basic quantum physics and theory, QC architecture, QC programming, and the analysis, design, and implementation of QC algorithms on simulated and actual quantum computers with a focus on real-world application.
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Automated Learning & Data Analysis (G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        A course that combined the fields of data science and machine learning with the application of utilizing machine learning and conducting data mining.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Automated Learning & Data Analysis (G)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            A course that combined the fields of data science and machine learning with the application of utilizing machine learning and conducting data mining.
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Content, Assessment, and Pedagogy (G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        One of my favorite classes at NC State! We learned and discussed various (proposed) "methods" of learning, how to structure material for effective understanding, and how to assess the process of education in order to improve the cycle of learning.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Content, Assessment, and Pedagogy (G)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            One of my favorite classes at NC State! We learned and discussed various "methods" of learning, how to structure material for effective understanding, and how to assess the process of education in order to improve the cycle of learning.
+                        </p>
+                    </details>
                 </div>
 
                 <!-- Column 2 -->
                 <div style="flex: 1 1 45%; min-width: 300px; max-width: 600px;">
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Software Security (U)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        A very fun class that covered the essentials about secure software development. Topics included the classic CIA triad, threat analysis and planning, the security ecosystem (CVEs, MITRE), useful tools (Wireshark, fuzzers), and web exploitation.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Software Security (U)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            A very fun class that covered the essentials about secure software development. Topics included the classic CIA triad, threat analysis and planning, the security ecosystem (CVEs, MITRE), useful tools (Wireshark, fuzzers), and web exploitation.
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Computer Security (U)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        Don't let the name fool you, this was a class on ethical hacking. We covered a plethora of topics from hardware exploits to reverse engineering to "softer" concepts like the underworld economy and analysis of unethical hacking. Many of the assignments focused on gaining privileged access to systems, sort of like mini-CTFs but with one topic of focus at a time.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Computer Security (U)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            Don't let the name fool you, this was a class on ethical hacking. We covered a plethora of topics from hardware exploits to reverse engineering to "softer" concepts like the underworld economy and analysis of unethical hacking. Many of the assignments focused on gaining privileged access to systems, sort of like mini-CTFs but with one topic of focus at a time.
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Network Security (U)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        This class had surprisingly little to do with networks once we finished a short summary of the TCP/IP layers and primarily focused on encryption, the CIA triad (at a higher level than SWSec), firewalls, automation, and the like. From this class, I discovered the <a href="https://open.spotify.com/show/4YeKi2aGfxuhGj2QqazzVV?si=012ec7adfc0249fb">Open Source Security Podcast</a> which I highly recommend.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Network Security (U)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            This class had surprisingly little to do with networks once we finished a short summary of the TCP/IP layers and primarily focused on encryption, the CIA triad (at a higher level than SWSec), firewalls, automation, and the like. From this class, I discovered the <a href="https://open.spotify.com/show/4YeKi2aGfxuhGj2QqazzVV?si=012ec7adfc0249fb">Open Source Security Podcast</a> which I highly recommend.
+                        </p>
+                    </details>
 
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Computer Networks (G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        The course covered concepts such as TCP/IP in-depth, error checking and correction, and the mathematics and implementation of various forms of wireless communication (wifi/802.11b, 5G, multiplexing, etc.). As part of this class, I completed a topical survey with a team on Disconnected, Intermittent, Limited (DIL) environments which has utility in military and emergency situations.
-                    </p>
-
-                    <div style="font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; text-align: center;">Data Structures and Algorithms (U/G)</div>
-                    <p style="font-size: 1em; color: #444; margin-top: 0; margin-bottom: 15px; text-align: center;">
-                        For the undergraduate class, we went over the analysis, design, and implementation of various algorithms (e.g., bubble sort, merge sort, radix sort, etc.) and data structures & related concepts (e.g., linked lists, queuing, concatenation, etc.). I will be taking the graduate-level version of this course in the Spring of 2025.
-                    </p>
+                    <details class="dd-box">
+                        <summary class="dd-summary">
+                            <span>Data Structures and Algorithms (U/G)</span>
+                        </summary>
+                        <hr class="dd-divider">
+                        <p class="dd-paragraph">
+                            For the undergraduate class, we went over the analysis, design, and implementation of various algorithms (e.g., bubble sort, merge sort, radix sort, etc.) and data structures & related concepts (e.g., linked lists, queuing, concatenation, etc.). I will be taking the graduate-level version of this course in the Spring of 2025.
+                        </p>
+                    </details>
                 </div>
             </div>
 
-
-            <h2 style="text-align: center; color: #222;">Resume</h2>
-
+            <h2 class="section-info">Resume</h2>
             <embed src="/files/resume_online.pdf" 
                 width="100%" 
                 height="600px" 
                 style="border: 2px solid #ccc; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"/>
+
         </div>
     </div>
 </div>
